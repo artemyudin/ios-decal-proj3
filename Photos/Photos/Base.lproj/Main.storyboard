@@ -1,26 +1,114 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RKt-rA-9Ib">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Popular Photos on Instagram-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Photos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PhotosCollectionViewController" customModule="Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UICollectionView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Popular Photos on Instagram" id="pZX-Tk-bOZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1323" y="272"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="YrX-G7-kOV">
+            <objects>
+                <viewController id="L8H-1p-iCk" customClass="DetailViewController" customModule="Photos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fyv-Sk-zOn"/>
+                        <viewControllerLayoutGuide type="bottom" id="R6R-An-93o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mhr-Zq-RaG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qLO-Kd-t0a">
+                                <rect key="frame" x="5" y="20" width="590" height="142"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qLO-Kd-t0a" secondAttribute="height" multiplier="15:8" id="zxQ-AY-aUl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LIKES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XY-n8-13i">
+                                <rect key="frame" x="362" y="170" width="132" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9XY-n8-13i" secondAttribute="height" multiplier="44:7" id="qh9-gm-yVa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="USER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjY-lF-d8s">
+                                <rect key="frame" x="66" y="169" width="175" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qjY-lF-d8s" secondAttribute="height" multiplier="25:3" id="2st-Sz-x2u"/>
+                                    <constraint firstAttribute="width" constant="175" id="dgX-Ul-yhf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qLO-Kd-t0a" firstAttribute="top" secondItem="fyv-Sk-zOn" secondAttribute="bottom" id="4VT-nE-OZq"/>
+                            <constraint firstItem="qjY-lF-d8s" firstAttribute="leading" secondItem="mhr-Zq-RaG" secondAttribute="leadingMargin" constant="46" id="O3d-TK-aQt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9XY-n8-13i" secondAttribute="trailing" constant="86" id="OdL-9J-pxX"/>
+                            <constraint firstItem="qLO-Kd-t0a" firstAttribute="centerX" secondItem="mhr-Zq-RaG" secondAttribute="centerX" id="cv7-ue-x9o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qLO-Kd-t0a" secondAttribute="trailing" constant="-15" id="jJH-zI-YIs"/>
+                            <constraint firstItem="9XY-n8-13i" firstAttribute="top" secondItem="qLO-Kd-t0a" secondAttribute="bottom" constant="8" id="oRY-w6-Iym"/>
+                            <constraint firstItem="qjY-lF-d8s" firstAttribute="top" secondItem="qLO-Kd-t0a" secondAttribute="bottom" constant="8" id="yZx-Vb-y1g"/>
+                            <constraint firstItem="qLO-Kd-t0a" firstAttribute="leading" secondItem="mhr-Zq-RaG" secondAttribute="leadingMargin" constant="-15" id="yg7-f4-cue"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="img" destination="qLO-Kd-t0a" id="V82-gi-ofI"/>
+                        <outlet property="likes" destination="9XY-n8-13i" id="S4Y-dS-zKg"/>
+                        <outlet property="usr" destination="qjY-lF-d8s" id="QS4-5C-5kJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d4L-TO-Ukx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1996" y="272"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dg4-ue-Zmv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RKt-rA-9Ib" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A2p-Pj-grs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7cF-s1-vVr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gsz-bv-D6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="932"/>
         </scene>
     </scenes>
 </document>
